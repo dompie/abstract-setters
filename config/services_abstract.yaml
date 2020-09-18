@@ -1,0 +1,12 @@
+services:
+
+  App\AbstractTest:
+    abstract: true
+    autowire: true
+    calls:
+      - setLogger: ['@logger']
+      - setDispatcher: ['@event_dispatcher']
+
+  App\RealTest:
+    autowire: true
+    parent: App\AbstractTest
